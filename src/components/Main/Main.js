@@ -27,8 +27,16 @@ function Main() {
   };
 
   return (
-    <main className="Main">
-      <Movies popularMovies={movies} />
+    <main
+      className="Main"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Movies popularMovies={movies} title={"Populära filmer"} />
     </main>
   );
 }

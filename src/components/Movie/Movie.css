@@ -1,0 +1,17 @@
+.card {
+  width: 150px;
+  min-width: 150px;
+  border: 1px solid green;
+  padding: 12px;
+  overflow: visible;
+  border-radius: 0.4em;
+}
+
+.image {
+  box-shadow: 0 2px 8px rgb(0, 0, 0, 10%);
+  border: 1px solid #fff;
+  border-radius: 0.4em;
+  width: 100%;
+  min-height: 10em;
+  overflow: hidden;
+}
