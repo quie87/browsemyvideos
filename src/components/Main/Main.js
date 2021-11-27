@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import Movies from "../Movies/Movies";
 
 function Main() {
   const api_key = process.env.REACT_APP_API_KEY;
@@ -27,7 +28,7 @@ function Main() {
 
   return (
     <main className="Main">
-      <div>{movies.length ? <h2>{movies[0].title}</h2> : ""}</div>
+      <Movies popularMovies={movies} />
     </main>
   );
 }
