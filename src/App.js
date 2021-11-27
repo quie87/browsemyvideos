@@ -1,14 +1,8 @@
-import './App.css';
+import "./App.css";
+import { React } from "react";
 
 function App() {
-  const api_key = process.env.REACT_APP_API_KEY;
-  return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
