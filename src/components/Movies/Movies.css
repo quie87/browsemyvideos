@@ -8,8 +8,6 @@
   display: flex;
   gap: 1.5em;
   height: 100%;
-  margin-top: 2em;
-  padding: 1em;
   overflow-x: scroll;
   overflow-y: hidden;
 }
