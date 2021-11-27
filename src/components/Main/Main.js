@@ -6,25 +6,28 @@ function Main() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
-      );
+    const getMovies = async () => {
+      const moviesFromAPI = await fetchMovies();
 
-      const data = await res.json();
-
-      console.log(data);
-      setMovies(data.results);
+      setMovies(moviesFromAPI.results);
     };
 
-    fetchMovies();
-  }, [api_key]);
+    getMovies();
+  }, []);
+
+  const fetchMovies = async () => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
+    );
+
+    const data = await res.json();
+    console.log(data);
+    return data;
+  };
 
   return (
     <main className="Main">
-      <div>
-        <h2>{movies[0].title}</h2>
-      </div>
+      <div>{movies.length ? <h2>{movies[0].title}</h2> : ""}</div>
     </main>
   );
 }
