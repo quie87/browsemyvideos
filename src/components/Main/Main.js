@@ -3,27 +3,35 @@ import Movies from "../Movies/Movies";
 
 function Main() {
   const api_key = process.env.REACT_APP_API_KEY;
+  const topRatedMoviesPath = 'top_rated';
+  const popularMoviesPath = 'popular'
 
-  const [movies, setMovies] = useState([]);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
-    const getMovies = async () => {
-      const moviesFromAPI = await fetchMovies();
-
-      setMovies(moviesFromAPI.results);
-    };
-
-    getMovies();
+    getTopRatedMovies();
+    getPopularMovies();
   }, []);
 
-  const fetchMovies = async () => {
+  const getTopRatedMovies = async () => {
+    const moviesFromAPI = await fetchMovies(topRatedMoviesPath);
+
+    setTopRatedMovies(moviesFromAPI.results);
+  };
+
+  const getPopularMovies = async () => {
+    const moviesFromAPI = await fetchMovies(popularMoviesPath);
+
+    setPopularMovies(moviesFromAPI)
+  }
+
+  const fetchMovies = async (path) => {
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${path}?api_key=${api_key}&language=en-US&page=1`
     );
 
-    const data = await res.json();
-    console.log(data);
-    return data;
+    return await res.json();
   };
 
   return (
@@ -36,7 +44,8 @@ function Main() {
         alignItems: "center",
       }}
     >
-      <Movies popularMovies={movies} title={"Populära filmer"} />
+      <Movies movies={topRatedMovies} title={"Top Rated Movies"} />
+      <Movies movies={popularMovies} title={"Popular Movies"} />
     </main>
   );
 }

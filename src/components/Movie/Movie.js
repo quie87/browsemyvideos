@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import "./Movie.css";
 
 function Movie({ movie }) {
@@ -14,7 +14,7 @@ function Movie({ movie }) {
               <img
                 loading="lazy"
                 alt="poster"
-                class="poster"
+                className="poster"
                 src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
               />
             </a>
