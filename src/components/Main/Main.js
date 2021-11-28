@@ -23,7 +23,7 @@ function Main() {
   const getPopularMovies = async () => {
     const moviesFromAPI = await fetchMovies(popularMoviesPath);
 
-    setPopularMovies(moviesFromAPI)
+    setPopularMovies(moviesFromAPI.results)
   }
 
   const fetchMovies = async (path) => {
