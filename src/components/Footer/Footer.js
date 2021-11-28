@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer
       className="footer"
-      style={{ position: "fixed", left: 0, bottom: 0, width: "100%" }}
+      style={{  width: "100%", marginTop: '3em', padding: '4em', borderTop: '1px solid green' }}
     >
       <div
         style={{
