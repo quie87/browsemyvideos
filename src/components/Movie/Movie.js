@@ -27,6 +27,7 @@ function Movie({ movie }) {
           <p>
             <b>Ratings:</b> {movie.vote_average}
           </p>
+          <details>{movie.overview}</details>
         </div>
       </div>
     </>

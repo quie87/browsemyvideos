@@ -4,10 +4,9 @@
 }
 
 .content {
-    max-height: 20em !important;
+    height: auto;
     display: flex;
     gap: 1.5em;
-    height: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
 }
