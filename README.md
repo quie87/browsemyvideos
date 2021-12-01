@@ -1,6 +1,15 @@
 # browsemyvideos
 
-This is a small code-test project.
+Ett litet kod-test projekt.
+
+## Tekniker som används är
+
+- Javascript
+- React
+
+## Publisering
+
+- Url till live-version: https://browsmyvideos.herokuapp.com/
 
 ## API
 
